@@ -1,1 +1,1 @@
-export const API_BACK_URL = 'http://ec2-18-228-30-146.sa-east-1.compute.amazonaws.com/api';
+export const API_BACK_URL = 'https://mo84p5ordj.execute-api.sa-east-1.amazonaws.com/dev/api';
