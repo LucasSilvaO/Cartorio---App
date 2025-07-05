@@ -1,2 +1,1 @@
-export const API_BACK_URL = 'http://localhost:8000';
-//export const API_BACK_URL = 'https://app.fattoassessoria.com/api';
+export const API_BACK_URL = 'http://ec2-18-228-30-146.sa-east-1.compute.amazonaws.com/api';

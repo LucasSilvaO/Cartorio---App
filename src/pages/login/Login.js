@@ -53,7 +53,8 @@ function Login() {
     }
     return (
       <div className="login-page">
-        <img src={logo2} alt="logo" className="logo"/>
+        <h3 className='login-title'>Cartório App</h3>
+        <p>Utilize o usuário "lucas" e senha "123"</p>
         <FormGroup className='form-login'>
         <InputGroup >
             <InputGroupText>
