@@ -2,7 +2,7 @@ import { API_BACK_URL } from '../../src/config/config';
 
 export const fetchTranslators = async () => {
     try {
-        const response = await fetch(`${API_BACK_URL}/tradutores`, {
+        const response = await fetch(`${API_BACK_URL}/tradutores/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ export const createClient = async (client) => {
 
 export const fetchClientById = async (id) => {
     try {
-        const response = await fetch(`${API_BACK_URL}/clientes/${id}`, {
+        const response = await fetch(`${API_BACK_URL}/clientes/${id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ export const createBudget = async (budget) => {
 
 export const fetchBudgets = async () => {
     try {
-        const response = await fetch(`${API_BACK_URL}/orcamentos`, {
+        const response = await fetch(`${API_BACK_URL}/orcamentos/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -313,7 +313,7 @@ export const patchBudget = async (budgetId, budgetBody) => {
 
 export const fetchServices = async () => {
     try {
-        const response = await fetch(`${API_BACK_URL}/servicos`, {
+        const response = await fetch(`${API_BACK_URL}/servicos/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -371,7 +371,7 @@ export const fetchServicesByParams = async ({startDate, endDate, familia, client
 
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/servicos?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/servicos/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -426,7 +426,7 @@ export const fetchServicesByClientWithParams = async (clientId, {startDate, endD
 
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/clientes/${clientId}/servicos?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/clientes/${clientId}/servicos/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -462,7 +462,7 @@ export const fetchWithUrl = async (url) => {
 
 export const fetchUsers = async () => {
     try {
-        const response = await fetch(`${API_BACK_URL}/usuarios`, {
+        const response = await fetch(`${API_BACK_URL}/usuarios/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -500,7 +500,7 @@ export const createUser = async (user) => {
 
 export const fetchUserById = async (id) => {
     try {
-        const response = await fetch(`${API_BACK_URL}/usuarios/${id}`, {
+        const response = await fetch(`${API_BACK_URL}/usuarios/${id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -544,7 +544,7 @@ export const fetchUsersByParams = async (tipo, pageNumber) => {
     if (pageNumber) paramsArray.push(`page=${pageNumber}`);
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/usuarios?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/usuarios/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -585,7 +585,7 @@ export const createComment = async (commentBody) => {
 
 export const fetchServicesCA = async (page, page_size) => {
     try {
-        const response = await fetch(`${API_BACK_URL}/conta-azul/sales?page=${page}&page_size=${page_size}`, {
+        const response = await fetch(`${API_BACK_URL}/conta-azul/sales/?page=${page}&page_size=${page_size}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -612,7 +612,7 @@ export const fetchServicesCAByParams = async (startDate, endDate, page, termo_bu
     paramsArray.push(`termo_busca=${termo_busca}`); // Para buscar todos os serviços, caso não tenha termo de busca
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/conta-azul/sales?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/conta-azul/sales/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -635,7 +635,7 @@ export const fetchSalesSummary = async (startDate, endDate) => {
     if (endDate) paramsArray.push(`data_final=${endDate}`);
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/documentos-servicos-agrupados?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/documentos-servicos-agrupados/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -654,7 +654,7 @@ export const fetchSalesSummary = async (startDate, endDate) => {
 
 export const fetchSellerCA = async () => {
     try {
-        const response = await fetch(`${API_BACK_URL}/conta-azul/sellers`, {
+        const response = await fetch(`${API_BACK_URL}/conta-azul/sellers/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
