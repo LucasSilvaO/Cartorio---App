@@ -11,7 +11,6 @@ Aplicação web para gerenciar orçamentos e serviços de um cartório, permitin
 ### Frontend
 - [React](https://reactjs.org/) – Interface SPA dinâmica
 - [Vite](https://vitejs.dev/) – Build rápido e leve
-- [Tailwind CSS](https://tailwindcss.com/) (opcional, se estiver usando)
 - [Vercel](https://vercel.com/) – Deploy do frontend
 
 ### Backend
