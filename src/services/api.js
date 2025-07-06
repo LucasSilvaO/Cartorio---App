@@ -60,7 +60,7 @@ export const createTranslator = async (translator) => {
 
 export const fetchClients = async (page) => {
     try {
-        const response = await fetch(`${API_BACK_URL}/clientes?${page ? `page=${page}` : ""}`, {
+        const response = await fetch(`${API_BACK_URL}/clientes/?${page ? `page=${page}` : ""}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export const fetchClientByParams = async (nome, tipo) => {
     if (tipo) paramsArray.push(`tipo_do_cliente=${tipo}`);
     const params = paramsArray.join('&');
     try {
-        const response = await fetch(`${API_BACK_URL}/clientes?${params}`, {
+        const response = await fetch(`${API_BACK_URL}/clientes/?${params}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
