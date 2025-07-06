@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# 📜 Cartório APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema de Cadastro de Orçamentos e Serviços para Cartório
 
-## Available Scripts
+Aplicação web para gerenciar orçamentos e serviços de um cartório, permitindo o cadastro, edição e consulta de clientes, tradutores e serviços realizados. Ideal para agilizar o atendimento e a organização de demandas internas.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- [React](https://reactjs.org/) – Interface SPA dinâmica
+- [Vite](https://vitejs.dev/) – Build rápido e leve
+- [Tailwind CSS](https://tailwindcss.com/) (opcional, se estiver usando)
+- [Vercel](https://vercel.com/) – Deploy do frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- [Python 3.x](https://www.python.org/)
+- [Django](https://www.djangoproject.com/) – Framework backend robusto
+- [Django REST Framework](https://www.django-rest-framework.org/) – Criação da API REST
+- [django-cors-headers](https://pypi.org/project/django-cors-headers/) – Configuração de CORS
+- [Gunicorn](https://gunicorn.org/) + [Nginx](https://www.nginx.com/) – Servidor de produção
+- [EC2 AWS](https://aws.amazon.com/ec2/) – Hospedagem do backend
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Funcionalidades
 
-### `npm run build`
+- ✅ Cadastro de clientes e tradutores
+- ✅ Criação de orçamentos e serviços
+- ✅ Edição e exclusão de registros
+- ✅ Consulta rápida com filtros
+- ✅ Interface amigável e responsiva
+- ✅ API REST integrada com autenticação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧩 Como Rodar Localmente
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend (Django)
 
-### `npm run eject`
+1. Clone o repositório e acesse a pasta backend:
+   ```
+   git clone https://github.com/seu-usuario/cartorio-app.git
+   cd cartorio-app/backend
+   ```
+Crie e ative o ambiente virtual:
+```
+python -m venv venv
+source venv/bin/activate  # no Windows: venv\Scripts\activate
+Instale as dependências:
+```
+```
+pip install -r requirements.txt
+Rode as migrações:
+python manage.py migrate
+```
+Inicie o servidor:
+```
+python manage.py runserver
+```
+Frontend (React)
+Acesse a pasta frontend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+cd ../frontend
+```
+Instale as dependências:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install
+```
+Rode a aplicação:
+```
+npm run dev
+```
+O frontend ficará disponível em http://localhost:5173 e se comunicará com a API Django.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🌐 Deploy
+Frontend: Vercel – https://cartorio-app.vercel.app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Backend: Django hospedado em EC2, acessado via API Gateway da AWS com proxy para /dev/api/.
 
-## Learn More
+🛡️ Segurança
+Configurado CORS com django-cors-headers para aceitar somente domínios autorizados.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Proteção CSRF e autenticação via tokens (JWT ou Session, conforme implementado).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Logs e tratamento de erros no servidor.
